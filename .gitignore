@@ -2,3 +2,4 @@ myvenv/*
 .streamlit/
 .env
 **/__pycache__/
+.vscode/
