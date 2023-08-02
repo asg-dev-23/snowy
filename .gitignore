@@ -1,0 +1,4 @@
+myvenv/*
+.streamlit/
+.env
+**/__pycache__/
