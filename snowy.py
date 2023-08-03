@@ -11,9 +11,6 @@ from utils.snow_connect import SnowConnection
 #load environment variables
 load_dotenv()
 
-st.title("☃ｍ Snowy")
-load_dotenv()
-
 st.title("☃️ Snowy")
 
 openai.api_key = os.getenv("OPENAI_API_KEY")

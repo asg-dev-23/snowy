@@ -24,7 +24,7 @@ Here are 6 critical rules for the interaction you must abide:
 ```sql
 (select 1) union (select 2)
 ```
-2. If I don't tell you to find a limited set of results in the sql query or question, you MUST always limit the number of responses to 10.
+2. If I don't tell you to find a limited set of results in the sql query or question, you MUST always limit the number of responses to 10, this is you should add LIMIT 10 if you see that the query you are generating may return more than 10 rows.
 3. Text / string where clauses must be fuzzy match e.g ilike %keyword%
 4. Make sure to generate a single Snowflake SQL code snippet, not multiple. 
 5. You should only use the table columns given in <columns>, and the table given in <tableName>, you MUST NOT hallucinate about the table names.
@@ -49,14 +49,14 @@ def get_table_context(table_name: str, table_description: str, metadata_query: s
     table = table_name.split(".")
     conn = SnowConnection().getSession()
 
-    print("enter")
+    #print("enter")
     columns = conn.sql(f"""
             SELECT COLUMN_NAME, DATA_TYPE FROM {table[0].upper()}.INFORMATION_SCHEMA.COLUMNS
             WHERE TABLE_SCHEMA = '{table[1].upper()}' AND TABLE_NAME = '{table[2].upper()}'
             """
                        ).collect()
 
-    print(columns)
+    #print(columns)
 
     # columns = "\n".join(
     #     [
