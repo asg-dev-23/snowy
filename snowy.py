@@ -8,6 +8,10 @@ import os
 from utils.prompts import get_system_prompt
 from utils.snow_connect import SnowConnection
 
+#load environment variables
+load_dotenv()
+
+st.title("☃ｍ Snowy")
 load_dotenv()
 
 st.title("☃️ Snowy")
